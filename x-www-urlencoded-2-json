@@ -1,0 +1,36 @@
+## Parses x-www-urlencoded data to JSON for AWS' API Gateway
+## Big props to https://forums.aws.amazon.com/thread.jspa?messageID=673012&tstart=0#673012
+##
+## Author: Christian E Willman <christian@willman.io>## Big props to https://forums.aws.amazon.com/thread.jspa?messageID=673012&tstart=0#673012
+
+#if ( $context.httpMethod == "POST" )
+  #set( $requestBody = $input.path('$') )
+#else
+  #set( $requestBody = "" )
+#end
+
+#set( $keyValuePairs = $requestBody.split("&") )
+#set( $params = [] )
+
+## Filter empty key-value pairs
+#foreach( $kvp in $keyValuePairs )
+  #set( $operands = $kvp.split("=") )
+
+  #if( $operands.size() == 1 || $operands.size() == 2 )
+    #set( $success = $params.add($operands) )
+  #end
+#end
+
+{
+  #foreach( $param in $params )
+    #set( $key = $util.urlDecode($param[0]) )
+
+    #if( $param.size() > 1 )
+      #set( $value = $util.urlDecode($param[1]) )
+    #else
+      #set( $value = "" )
+    #end
+
+    "$key": "$value"#if( $foreach.hasNext ),#end
+  #end
+}
