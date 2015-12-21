@@ -8,7 +8,7 @@ This project is heavily influenced by the work of avilewin, whose code is
 [available the AWS forums](https://forums.aws.amazon.com/thread.jspa?messageID=673012&tstart=0#673012).
 
 # Test Cases
-xwwwformurlencoded-2-json correctly parses the following types of form data strings:
+xwwwformurlencoded-2-json correctly parses the following form data strings:
 
 - `key=value`
 - `key=value&foo=bar`
