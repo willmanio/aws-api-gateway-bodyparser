@@ -1,7 +1,6 @@
 ## Parses x-www-urlencoded data to JSON for AWS' API Gateway
-## Big props to https://forums.aws.amazon.com/thread.jspa?messageID=673012&tstart=0#673012
 ##
-## Author: Christian E Willman <christian@willman.io>## Big props to https://forums.aws.amazon.com/thread.jspa?messageID=673012&tstart=0#673012
+## Author: Christian E Willman <christian@willman.io>
 
 #if ( $context.httpMethod == "POST" )
   #set( $requestBody = $input.path('$') )
