@@ -1,5 +1,4 @@
 # aws-api-gateway-xwwwformurlencoded-2-json
-Parses x-www-form-urlencoded requests to JSON for AWS' API Gateway
 
 This [API Gateway](https://aws.amazon.com/api-gateway/) mapping template parses
 form body data (encoded as `x-www-form-urlencoded`) to JSON key-value pairs. It's handy when
