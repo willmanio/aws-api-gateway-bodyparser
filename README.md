@@ -25,8 +25,7 @@ form data strings:
 - `key=value&`
 
 # Author
-Christian E Willman
-christian@willman.io
+Christian E Willman <github@willman.io>
 
 # License
 MIT
