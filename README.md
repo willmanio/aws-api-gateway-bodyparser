@@ -24,8 +24,8 @@ form data strings:
 - `=value`
 - `key=value&`
 
-# Author
+## Author
 Christian E Willman <github@willman.io>
 
-# License
+## License
 MIT
